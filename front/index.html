@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">    
+    <title>Stats COVID-19</title>
+</head>
+<!-- Here put into body event onload="initCharts()" -->
+<body>
+    <div class="container">
+        <main>
+            <header>
+                <h1>
+                    Using API: Covid-19-API
+                </h1>
+            </header>
+            <div class="main-content">
+                <aside>
+                    <!-- Here put logo UCAMP
+                         If you use bootstrap maybe could you use "Single button" -->
+                    <ul>
+                        <li>
+                            <input type="text" class="input" id="data-country" name="data-country" placeholder="Country">
+                        </li>
+                        <li>
+                            <input type="text" class="input" id="data-status" name="data-status" placeholder="Status">
+                        </li>
+                        <li>
+                            <input type="text" class="input" id="data-initial-date" name="data-initial-date" placeholder="Initial Date">
+                        </li>
+                        <li>
+                            <input type="text" class="input" id="data-final-date" name="data-final-date" placeholder="Final Date">
+                        </li>
+                        <li>
+                            <button id="btn-search" class="button is-primary" onclick="getData()">Search</button>
+                            <div id="show-spinner"></div>
+                        </li>
+                    </ul>
+                    <!-- Here put footer with name of partners -->
+                </aside>
+            </div>
+        </main>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1/dist/chart.min.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+</body>
+</html>
