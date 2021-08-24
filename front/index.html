@@ -13,37 +13,42 @@
     <div class="container">
         <main>
             <header>
-                <h1>
-                    Using API: Covid-19-API
-                </h1>
+                <h1 class="title">Using API: Covid-19-API</h1>
+                <br>
             </header>
+            
             <div class="main-content">
+                
                 <aside>
                     <!-- Here put logo UCAMP
                          If you use bootstrap maybe could you use "Single button" -->
                     <ul>
                         <li>
-<<<<<<< Updated upstream
-                            <input type="text" class="input" id="data-country" name="data-country" placeholder="Country">
-=======
                             <div class="select">
                                 <select  id="data-country">
+                                  
                                 </select>
                             </div>
                             
->>>>>>> Stashed changes
                         </li>
                         <li>
-                            <input type="text" class="input" id="data-status" name="data-status" placeholder="Status">
+                            <div class="select">
+                                <select  id="data-status">
+                                    <option>recovered</option>
+                                    <option>deaths</option>
+                                    <option>confirmed</option>
+                                </select>
+                            </div>
                         </li>
                         <li>
-                            <input type="text" class="input" id="data-initial-date" name="data-initial-date" placeholder="Initial Date">
+                            <input type="date" class="input" id="data-initial-date" name="data-initial-date" placeholder="Initial Date">
                         </li>
                         <li>
-                            <input type="text" class="input" id="data-final-date" name="data-final-date" placeholder="Final Date">
+                            <input type="date" class="input" id="data-final-date" name="data-final-date" placeholder="Final Date">
                         </li>
                         <li>
                             <button id="btn-search" class="button is-primary" onclick="getData()">Search</button>
+                            
                             <div id="show-spinner"></div>
                         </li>
                     </ul>
