@@ -23,6 +23,7 @@ function initCharts() {
 function getData() {
     // get dat from all input elements
     const inputFields = document.querySelectorAll('.input');
+    const inputList = document.getElementById('data-country').value;
     // We need to check that all inputs have values, in other case add warnings and show alerts
 
     // show spinner before load data 
@@ -35,11 +36,10 @@ function getData() {
     let initialDate = '';
     let finalDate = '';
 
+    country = inputList;
+    
     for ( const inputItem of inputFields ) {
-        if ( inputItem.name === 'data-country') {
-             country = inputItem.value;
-        }
-        else if ( inputItem.name === 'data-status') {
+        if ( inputItem.name === 'data-status') {
                   status = inputItem.value;
         }
         else if ( inputItem.name === 'data-initial-date') {
@@ -87,3 +87,29 @@ function getData() {
         console.log(data);
     })
 }
+
+function addOptions() {
+    let optionsList = '';
+
+    let showSpinner = document.getElementById('show-spinner');
+    showSpinner.classList.add('spinner-4');
+    setTimeout( () => showSpinner.classList.remove('spinner-4'), 2500 );
+    
+    fetch('http://localhost:3000/hist?country=&status=Confirmed')
+    
+    .then(function (response) {
+        return response.json();
+    })
+    .then(function (data) {
+        const container = document.querySelector('#data-country')
+        
+        for (const [country] of Object.entries(data)) {
+        optionsList += `<option>${country}</option>`
+        }
+
+        container.innerHTML += optionsList
+    })
+}
+
+addOptions();
+
