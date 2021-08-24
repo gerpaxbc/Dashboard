@@ -110,6 +110,5 @@ function addOptions() {
         container.innerHTML += optionsList
     })
 }
-
 addOptions();
 
